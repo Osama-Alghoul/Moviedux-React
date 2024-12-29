@@ -5,7 +5,7 @@ import MoiveCard from "./MoiveCard";
 export default function MoviesGrid() {
     const [movies, setMovies] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-
+    const [genre, setGenre] = useState("All Genres");
     useEffect(() => {
 
         fetch("movies.json")
