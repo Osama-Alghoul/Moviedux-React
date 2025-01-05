@@ -22,11 +22,14 @@ export default function MoiveCard({ movie, isWatchlisted, toggleWatchlist }) {
                     <span className={`movie-card-rating ${ratingColorClass(movie.rating)}`}>{movie.rating}</span>
                 </div>
                 <label className="switch">
-                    <input>
+                    <input
+                        type="checkbox"
+                        checked={isWatchlisted}
+                        onChange={() => toggleWatchlist(movie.id)}
+                    ></input>
 
-                    </input>
                     <span className="slider">
-                        <span className="slider-label" {isWatchlisted ? "In Watchlist" : "Add to Watchlist"}></span>
+                        <span className="slider-label">{isWatchlisted ? "In Watchlist" : "Add to Watchlist"}</span>
                     </span>
                 </label>
             </div>
